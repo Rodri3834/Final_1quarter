@@ -58,3 +58,18 @@ int CountItems(string[] text, int maxLengthItem)
     }
     return count;
 }
+
+// 5. Метод заполнения массива элементами нужной длины 
+void FillResultStringArray(string[] primary, string[] result, int maxLengthItem)
+{
+    int size = primary.Length;
+    int countItem = 0;
+    for (int i = 0; i < size; i++)
+    {
+        if (primary[i].Length <= maxLengthItem)
+        {
+            result[i - correctItem] = primary[i];
+        }
+        else countItem++;
+    }
+}
