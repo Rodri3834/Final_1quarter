@@ -45,3 +45,16 @@ void PrintArrayStrings(string[] text, string separator)
     }
     else Console.WriteLine(']');
 }
+
+// 4. Метод определения количества элементов массива заданной длины
+int CountItems(string[] text, int maxLengthItem)
+{
+    int size = text.Length;
+    int count = 0;
+    for (int i = 0; i < size; i++)
+    {
+        if (text[i].Length <= maxLengthItem)
+            count++;
+    }
+    return count;
+}
