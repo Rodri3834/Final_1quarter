@@ -68,8 +68,23 @@ void FillResultStringArray(string[] primary, string[] result, int maxLengthItem)
     {
         if (primary[i].Length <= maxLengthItem)
         {
-            result[i - correctItem] = primary[i];
+            result[i - countItem] = primary[i];
         }
         else countItem++;
     }
 }
+
+
+string chars = "AaBbCcDdEeFfGgHhIiGgKkLlNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789!@#$%^&*()-=+_[]{}";
+
+string[] text = CreateArrayStrings(7);
+FillArrayStrings(text, chars, 1, 6);
+PrintArrayStrings(text, ", ");
+
+int maxLength = 3;
+int count = CountItems(text, maxLength);
+Console.WriteLine($"Количество элементов массива с длинной не более трёх символов - {count}");
+
+string[] result = CreateArrayStrings(count);
+FillResultStringArray(text, result, maxLength);
+PrintArrayStrings(result, ", ");
